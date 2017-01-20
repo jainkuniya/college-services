@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 
-public class startup extends AppCompatActivity {
+public class Startup extends AppCompatActivity {
     private CardView cardView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,12 +15,12 @@ public class startup extends AppCompatActivity {
         cardView = (CardView) findViewById(R.id.card_view);
     }
     public void login(View view){
-        Intent intent = new Intent(this, login_activity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
 
         startActivity(intent);
     }
     public void signup(View view){
-        Intent intent = new Intent(this, signUp.class);
+        Intent intent = new Intent(this, SignUp.class);
 
         startActivity(intent);
     }

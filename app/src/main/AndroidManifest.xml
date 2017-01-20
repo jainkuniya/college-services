@@ -24,9 +24,9 @@
         <activity
             android:name=".Pal"
             android:label="PAL" />
-        <activity android:name=".login_activity"></activity>
-        <activity android:name=".signUp" />
-        <activity android:name=".startup">
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".SignUp" />
+        <activity android:name=".Startup">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

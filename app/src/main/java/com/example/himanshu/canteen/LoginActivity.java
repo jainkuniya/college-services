@@ -13,7 +13,7 @@ import android.widget.RadioButton;
 
 
 
-public class login_activity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class login_activity extends AppCompatActivity {
 
     }
     public void signup(View view){
-        Intent intent = new Intent(this, signUp.class);
+        Intent intent = new Intent(this, SignUp.class);
 
         startActivity(intent);
     }
