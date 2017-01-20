@@ -4,27 +4,36 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/college"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Amul_Shop"
+            android:label="Amul Shop" />
+        <activity
+            android:name=".Food_Barn"
+            android:label="Food Barn" />
+        <activity
+            android:name=".Juice_Shop"
+            android:label="Juice Shop" />
+        <activity
+            android:name=".Laundry"
+            android:label="Laundry" />
+        <activity
+            android:name=".Pal"
+            android:label="PAL" />
+        <activity android:name=".login_activity"></activity>
+        <activity android:name=".signUp" />
+        <activity android:name=".startup">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Amul_Shop"
-            android:label="Amul Shop"/>
-        <activity android:name=".Food_Barn"
-            android:label="Food Barn"/>
-        <activity android:name=".Juice_Shop"
-            android:label="Juice Shop"/>
-        <activity android:name=".Laundry"
-            android:label="Laundry"/>
-        <activity android:name=".Pal"
-            android:label="PAL"/>
+        <activity android:name=".merchantPage"></activity>
     </application>
 
 </manifest>
