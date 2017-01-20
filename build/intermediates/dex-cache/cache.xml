@@ -3,192 +3,363 @@
 
     <item
         is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_06c22b7ab01d51d1067cb6602f6d557928742bde/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_71ae096e95a8f8cd45be10f450d947e0ae8d3adb/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="4f3b38429258092a4ca93219a051ba70e105cf1a">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0fad90d89ca98c7a61c639d800314c2e8849503c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_b58aedcfb639bacbb4be607c2ff7f69d7fb2d4e8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_7faf516fe81956b6fdc3dc276067879afb5a5a07/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_f174be8640bcfb8d5d68911e709eb8a8023b5526/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
         sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_bca2594731d3d16f6fc65ec05700bb48872bc8d7/classes.dex" />
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_bd4eebda6ca22381fce99a01871ec39a26cb9e0c/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="49e7d1a149a67a95300f8fe7dfefa4fe7f709fe2">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e3cfff5ca5376894e4cd43a6a05a00608187197b/classes.dex" />
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_24c3339da7437539924ab41fa83aa98f22315e70/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_868df28e05011e2de3fc77b41c846846d9d1130f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_b85ae9d4d2cad2b75f3252552b806cd4daac7bdd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_e4209d950a9bc2366caeaac2dc29f9faefb23396/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_7555fe733ce3af8a3ed971f94da4ad31d52fc811/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_52d2b0616c575577b96cbd547337d13ca387ee75/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_9667021c94d73dc4ec5c5d1964bba5e415e63842/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.2.1/jars/classes.jar"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
         sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-24.2.1_695da3c45f940220d945bbefb416443d0bcb1579/classes.dex" />
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-24.2.1_95719aa09156446419a3cef944acfdac46000d93/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_9cbc13d16708bcf1be467a7edf465032c9349772/classes.dex" />
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_e32dfba50d8564a2a76912a3b84428798dba5f9b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_56c866453fa616e0ba6f62e739e45617b6c1fce3/classes.dex" />
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_79c19eaac528d17082398e705a042dd6ad8b7cb0/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_6382016247046c22284efd87214ffb8aff73616d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_4c8dab2c980b80bfeeb2de5da3dd06e68285fdf4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_f9098449a307940894e8ab52f8606f8b0eca881b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_8a6b3bf62f5c8d9f799dc4be9e5db91545f6ab07/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_c37b796430d12e2a29b18103e4af93b93fb246dd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_516d007067db5e2a47bb40ce811f974fa8147847/classes.dex" />
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_1886595e8d3dcc6d631e2496c68eb9e00959614b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/himanshu/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_a98698b40f9e97bf34cd8cc6c8bb5f85b5f62038/classes.dex" />
+        sha1="427361157ea5842c4de33029e0136100abc2e123">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_79c4bbfbcf68578b2500b65ba7760c3817815f48/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_1eca7b1e8088d7feaf3be4efff9fd3529a771f36/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_4180f5cbd1e330414c5c63e2417bf81609c27192/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_93c3f3315b7d3ab016a57b764f78fe60d068fad2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
         sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_b83a05f3978c152bd5da8b5420ad9b0bd0fcc09d/classes.dex" />
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_1c541ea09c654ad867cd17455a0f147f6278d952/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/himanshu/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_204a4abbeb679d9bce86b0ac7ad92dd08359706c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-24.2.1_9dea1ea10885bc6319bcf2453520f55ff790ae3c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_3c05124a93799afe243dade53b7230257026d2f8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_562c84b50844859d02043aab7819fd426070aa31/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_04168f4757d29060199e6a7c570e6a1b555c972c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_4d6dcfa1b9686d64d2b2b56fcbeb0abd0ce9feb4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="a10a411eb963f7d8024d85a1c34be2a976dea749">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e30a006b987979169ce8e73bdd0a0fd1d192eff1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_e622e9522f07bed645afc07f4cfdbe63ee233560/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_5818d81594480cf094c3b304655fd7fcb628f439/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_a96ab258f7e58113486a523750dee7159c005ec7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="7a8fa1186adc0c5804a49bb127a8c11479221cb7">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f6e7ba9431e35094c934cf858dea2b3562f2051a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_0452aa514fb5f7b3533e4c8464b3ffcfdc1a78f9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_69cc946485129fac34cacad64a0798d5aaacd365/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_4c64d2a749c9f86045b87d38d4aebeb4fcd54684/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_fa7b8bd8b773794b2485c3a6f9c2bfab3d45a3a5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_1fc2584c0dfd12503c8637859e4de85d0cde68c5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
         sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/home/himanshu/AndroidStudioProjects/Canteen/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_072650f3fd0af2b12d4b89d20299b6829b62083a/classes.dex" />
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_b2ed151e2d51f4b75e5b395a417d73ac5362c632/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_f373ebb4eef3400519171ae4ed6a6481909a7c25/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_b0aef0c059d7393220be2aa09053d294e1fcbf72/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_b589faab203601a75d82c8422cac2a0b7a7aecbb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/apps/college-services-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_f2f31818a59f1169e616669fa272dfcf26be9f99/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_0d41046284013f490187f3b785b1722f537dc9f7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/github/college-services/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="135ffbf0d61080c6317e844da94154076fdad855">
+        <dex dex="/home/khushboo/github/college-services/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_bcdb6b3daae57d652051116aa902716dfae28dbf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khushboo/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/home/khushboo/apps/college-services-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_73e8b27265e8a2ea88912c64f3dcdd2c59f23885/classes.dex" />
     </item>
 
 </items>
