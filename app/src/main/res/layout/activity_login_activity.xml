@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+
 
     >
 
@@ -10,7 +16,7 @@
         android:id="@+id/key"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_above="@+id/radio"
+        android:layout_above="@+id/login"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/logo" />
@@ -23,6 +29,7 @@
         android:layout_gravity="center"
         android:layout_margin="1dp"
         android:elevation="6dp"
+
         card_view:cardCornerRadius="3dp">
 
 
@@ -53,6 +60,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/login"
+                android:checkedButton="@+id/users"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -61,14 +69,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="70dp"
                     android:layout_marginRight="58dp"
-                    android:onClick="onRadioButtonClicked"
+                    android:onClick="checkedRadio"
                     android:text="merchant" />
 
                 <RadioButton
                     android:id="@+id/users"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
+                    android:onClick="checkedRadio"
+
                     android:text="user" />
             </RadioGroup>
 
@@ -107,18 +116,19 @@
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
-    >
+
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/login"
+
         android:layout_centerHorizontal="true"
         android:layout_margin="16dp"
         android:background="@color/colorPrimaryDark"
         android:text="LOGIN"
-        android:onClick="mainPage"
+        android:onClick="clickedlogin"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:textColor="#FFFFFF"
 
@@ -152,3 +162,5 @@
 
 
 </RelativeLayout>
+
+

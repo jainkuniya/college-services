@@ -7,18 +7,42 @@ package com.example.himanshu.canteen;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioButton;
-
-
+import android.widget.Toast;
 
 
 public class LoginActivity extends AppCompatActivity {
+    private EditText id;
+    private EditText password;
+    private int g;
+    private RadioButton merchant, user;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_activity);
+        id = (EditText) findViewById(R.id.rollno);
+        password=(EditText) findViewById(R.id.password);
+
+        merchant = (RadioButton) findViewById(R.id.merchants);
+        user = (RadioButton) findViewById(R.id.users);
+
+        if (merchant.isChecked()) {
+            g=1;
+
+        }
+        if(user.isChecked()){
+            g=2;
+        }
+
+
+
 
     }
     public void signup(View view){
@@ -26,26 +50,58 @@ public class LoginActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
-    public void mainPage(View view){
+    public void clickedlogin(View view){
+        Editable idEditable = id.getText();
+        String id = idEditable.toString();
 
-        Intent mainPage=new Intent(this,MainActivity.class);
-        startActivity(mainPage);
+
+        Editable passEditable = password.getText();
+        String password = passEditable.toString();
+
+        if(g==1){
+
+            if(id.equals("1")&&password.equals("1")){
+
+                Intent merchantPage=new Intent(this,merchantPage.class);
+                startActivity(merchantPage);
+
+            }
+
+        }
+        if(g==2){
+            if(id.equals("2")&&password.equals("2")) {
+
+                Intent mainPage = new Intent(this, MainActivity.class);
+                startActivity(mainPage);
+            }
+        }
+        if((id!="2"&&password!="2")||(password!="1"&& id!="1")){
+            Toast.makeText(getApplicationContext(),"incorrect id password!!",
+                    Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
+    public void checkedRadio(View view){
+        onRadioButtonClicked();
     }
 
-    public void  onRadioButtonClicked(View view){
-        boolean checked = ((RadioButton) view).isChecked();
+    public void onRadioButtonClicked(){
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.merchants:
-                if (checked)
-                    // Pirates are the best
-                    break;
-            case R.id.users:
-                if (checked)
-                    // Ninjas rule
-                    break;
+
+
+
+        merchant = (RadioButton) findViewById(R.id.merchants);
+        user = (RadioButton) findViewById(R.id.users);
+
+        if (merchant.isChecked()) {
+            g=1;
+
         }
+        if(user.isChecked()){
+           g=2;
+        }
+
 
     }
 }
