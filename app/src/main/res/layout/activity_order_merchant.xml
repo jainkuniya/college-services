@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="3dp">
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_merorder"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="4dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="33dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/shop_name"
+                android:textColor="#ffffff"
+                android:textSize="24dp"
+                android:background="@drawable/textview_design"
+                android:gravity="center"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="7dp"/>
+            <TextView
+                android:id="@+id/shop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/shop_name"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="4dp"/>
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop"
+                android:layout_toRightOf="@id/shop_name"
+                android:layout_marginLeft="17dp"
+                android:layout_marginBottom="3dp"/>
+            <ImageView
+                android:id="@+id/overflow"
+                android:layout_width="@dimen/ic_album_overflow_width"
+                android:layout_height="@dimen/ic_album_overflow_height"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="3dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_dots" />
+            <Button
+                android:id="@+id/doneButton"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="Done"
+                android:textColor="#FFFFFF"
+                android:background="@color/colorPrimary"
+                android:layout_toLeftOf="@id/overflow"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(mainPage);
             }
         }
-        if((id!="2"&&password!="2")||(password!="1"&& id!="1")){
+        else if((id!="2" && password!="2")||(password!="1"&& id!="1")){
             Toast.makeText(getApplicationContext(),"incorrect id password!!",
                     Toast.LENGTH_SHORT).show();
 
