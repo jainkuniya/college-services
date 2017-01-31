@@ -34,7 +34,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> 
             shopCover = (ImageView)view.findViewById(R.id.cover);
             shopName = (TextView)view.findViewById(R.id.name);
         }
-
     }
 
     public ShopAdapter(Context mContext, List<Shop> shopList) {
@@ -49,45 +48,20 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> 
 
     public void onBindViewHolder (final MyViewHolder holder, int position) {
         final Shop shop = shopList.get(position);
-        holder.shopName.setText(shop.getName());
+        holder.shopName.setText(String.valueOf(shop.getName()));
         Glide.with(mContext).load(shop.getThummbnail()).into(holder.shopCover);
 
         holder.shopCover.setOnClickListener(new View.OnClickListener() {
-            int i;
             public void onClick(View v) {
-                i=shop.getId();
-                //activity(i);
                 Intent intent =  new Intent();
-                if(i==1)
-                    intent = new Intent(mContext, Amul_Shop.class);
-                else if(i==2)
-                    intent = new Intent(mContext, Food_Barn.class);
-                else if(i==3)
-                    intent = new Intent(mContext, Juice_Shop.class);
-                else if(i==4)
-                    intent = new Intent(mContext, Laundry.class);
-                else if(i==5)
-                    intent = new Intent(mContext, Pal.class);
+
+                    intent = new Intent(mContext, AmulShop.class);
+                intent.putExtra("shopId",shop.getId());
+
                 mContext.startActivity(intent);
             }
         });
     }
-
-    //public void activity(int num) {
-        /*Intent intent =  new Intent();
-        if(num==1)
-            intent = new Intent(mContext, Amul_Shop.class);
-        else if(num==2)
-            intent = new Intent(mContext, Food_Barn.class);
-        else if(num==3)
-            intent = new Intent(mContext, Juice_Shop.class);
-        else if(num==4)
-            intent = new Intent(mContext, Laundry.class);
-        else if(num==5)
-            intent = new Intent(mContext, Pal.class);
-        mContext.startActivity(intent);
-    }*/
-
     public int getItemCount() {
         return shopList.size();
     }

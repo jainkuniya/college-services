@@ -26,6 +26,7 @@ import static com.example.himanshu.canteen.R.id.card_view1;
 public class MainActivity extends AppCompatActivity {
     private List<Order> orderList;
     private List<Shop> shopList;
+
     private RecyclerView recyclerView, recyclerView1;
     private OrderAdapter orderAdapter;
     private ShopAdapter shopAdapter;
@@ -106,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
             this.spacing = spacing;
             this.includeEdge = includeEdge;
         }
-
         public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
             int position = parent.getChildAdapterPosition(view); // item position
             int column = position % spanCount; // item column
