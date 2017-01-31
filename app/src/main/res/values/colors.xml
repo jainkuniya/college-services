@@ -3,5 +3,7 @@
     <color name="colorPrimary">#e91e63</color>
     <color name="colorPrimaryDark">#c2185B</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="shopBackground">#F3E5F5</color>
     <color name="textViewBG">#689F38</color>
+    <color name="itemsBackground">#9CCC65</color>
 </resources>

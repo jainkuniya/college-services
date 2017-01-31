@@ -34,6 +34,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".merchantPage"></activity>
+        <activity android:name=".AmulShop"
+            android:label="Amul Shop"/>
     </application>
 
 </manifest>
