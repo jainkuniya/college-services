@@ -11,7 +11,7 @@ android:
     - platform-tools
 
     # The BuildTools version used by your project
-    - build-tools-23.0.2
+    - build-tools-24.0.1
 
     # The SDK version used to compile your project
     - android-24
@@ -38,5 +38,5 @@ android:
 # run gradle lint and
 # gradle build without using using tests for now (assemble) on debug build only
 script:
-  - ./gradlew lintDebug
-  - ./gradlew assembleDebug
+  #- ./gradlew lintDebug
+  - ./gradlew
