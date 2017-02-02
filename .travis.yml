@@ -39,4 +39,4 @@ android:
 # gradle build without using using tests for now (assemble) on debug build only
 script:
   #- ./gradlew lintDebug
-  - ./gradlew
+  - ./gradlew assembleDebug
