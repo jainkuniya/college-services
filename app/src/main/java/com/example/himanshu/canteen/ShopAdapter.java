@@ -31,14 +31,14 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> 
 
         public MyViewHolder(View view) {
             super(view);
-            shopCover = (ImageView)view.findViewById(R.id.cover);
-            shopName = (TextView)view.findViewById(R.id.name);
+            shopCover = (ImageView) view.findViewById(R.id.cover);
+            shopName = (TextView) view.findViewById(R.id.name);
         }
     }
 
     public ShopAdapter(Context mContext, List<Shop> shopList) {
-        this.mContext=mContext;
-        this.shopList=shopList;
+        this.mContext = mContext;
+        this.shopList = shopList;
     }
 
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -46,22 +46,22 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> 
         return new MyViewHolder(itemView);
     }
 
-    public void onBindViewHolder (final MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
         final Shop shop = shopList.get(position);
         holder.shopName.setText(String.valueOf(shop.getName()));
         Glide.with(mContext).load(shop.getThummbnail()).into(holder.shopCover);
 
         holder.shopCover.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent =  new Intent();
-
-                    intent = new Intent(mContext, AmulShop.class);
-                intent.putExtra("shopId",shop.getId());
+                Intent intent;
+                intent = new Intent(mContext, AmulShop.class);
+                intent.putExtra("shopId", shop.getId());
 
                 mContext.startActivity(intent);
             }
         });
     }
+
     public int getItemCount() {
         return shopList.size();
     }

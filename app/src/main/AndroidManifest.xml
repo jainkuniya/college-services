@@ -9,22 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity
-            android:name=".Amul_Shop"
-            android:label="Amul Shop" />
-        <activity
-            android:name=".Food_Barn"
-            android:label="Food Barn" />
-        <activity
-            android:name=".Juice_Shop"
-            android:label="Juice Shop" />
-        <activity
-            android:name=".Laundry"
-            android:label="Laundry" />
-        <activity
-            android:name=".Pal"
-            android:label="PAL" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity"/>
         <activity android:name=".SignUp" />
         <activity android:name=".Startup">
             <intent-filter>
@@ -36,6 +21,8 @@
         <activity android:name=".merchantPage"></activity>
         <activity android:name=".AmulShop"
             android:label="Amul Shop"/>
+        <activity android:name=".BillPage"
+            android:label="Order Bill"/>
     </application>
 
 </manifest>

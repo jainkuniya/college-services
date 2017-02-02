@@ -6,7 +6,8 @@
     android:layout_gravity="center"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/card_margin"
-    android:layout_width="wrap_content"
+    android:padding="8dp"
+    android:layout_width="match_parent"
     card_view:cardCornerRadius="2dp">
 
     <RelativeLayout
@@ -20,8 +21,8 @@
             android:clickable="true"
             android:id="@+id/cover"
             android:layout_centerHorizontal="true"
-            android:layout_height="128dp"
-            android:layout_width="128dp"
+            android:layout_height="110dp"
+            android:layout_width="130dp"
             android:scaleType="fitXY" />
 
         <TextView

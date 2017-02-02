@@ -29,8 +29,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
     private List<Items> itemsList;
 
     public ItemsAdapter(Context mContext, List<Items> itemsList) {
-        this.mContext=mContext;
-        this.itemsList=itemsList;
+        this.mContext = mContext;
+        this.itemsList = itemsList;
     }
 
 
@@ -41,24 +41,22 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
     }
 
     @Override
-    public void onBindViewHolder (final ItemsAdapter.MyViewHolder holder, final int position) {
+    public void onBindViewHolder(final ItemsAdapter.MyViewHolder holder, final int position) {
         final Items item = itemsList.get(position);
         int quantity = Integer.parseInt(String.valueOf(item.getItemQty()));
         holder.nameItem.setText(item.getItemName());
         holder.priceItem.setText("\u20b9 " + String.valueOf(item.getItemPrice()));
         holder.qtyItem.setText(String.valueOf(quantity));
-        if (item.getItemQty()==0)
-        {
+        if (item.getItemQty() == 0) {
             holder.relativeLayout.setBackgroundColor(Color.WHITE);
-        }else
-        {
+        } else {
             holder.relativeLayout.setBackgroundColor(Color.parseColor("#AED581"));
         }
         holder.increment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int q = Integer.parseInt(holder.qtyItem.getText().toString());
-                q=q+1;
+                q = q + 1;
                 holder.qtyItem.setText(String.valueOf(q));
                 holder.relativeLayout.setBackgroundColor(Color.parseColor("#AED581"));
                 itemsList.get(position).setItemQty(q);
@@ -69,12 +67,12 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
             @Override
             public void onClick(View v) {
                 int q = Integer.parseInt(holder.qtyItem.getText().toString());
-                if(q>0) {
-                    q=q-1;
+                if (q > 0) {
+                    q = q - 1;
                     holder.qtyItem.setText(String.valueOf(q));
                 }
                 itemsList.get(position).setItemQty(q);
-                if(q==0)
+                if (q == 0)
                     holder.relativeLayout.setBackgroundColor(Color.WHITE);
             }
         });
@@ -90,14 +88,15 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
         public TextView nameItem, priceItem, qtyItem;
         public Button increment, decrement;
         RelativeLayout relativeLayout;
+
         public MyViewHolder(View view) {
             super(view);
-            nameItem = (TextView)view.findViewById(R.id.item_name);
-            priceItem = (TextView)view.findViewById(R.id.item_price);
-            qtyItem = (TextView)view.findViewById(R.id.qty);
-            increment = (Button)view.findViewById(R.id.increase);
-            decrement = (Button)view.findViewById(R.id.decrease);
-            relativeLayout = (RelativeLayout)view.findViewById(R.id.rl1);
+            nameItem = (TextView) view.findViewById(R.id.item_name);
+            priceItem = (TextView) view.findViewById(R.id.item_price);
+            qtyItem = (TextView) view.findViewById(R.id.qty);
+            increment = (Button) view.findViewById(R.id.increase);
+            decrement = (Button) view.findViewById(R.id.decrease);
+            relativeLayout = (RelativeLayout) view.findViewById(R.id.rl1);
         }
     }
 

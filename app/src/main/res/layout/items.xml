@@ -14,8 +14,7 @@
             android:id="@+id/item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="5dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:textSize="16dp"
             android:textStyle="bold" />
@@ -25,9 +24,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_name"
-            android:layout_marginLeft="55dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
-            android:gravity="center_horizontal"
             android:textSize="15dp" />
 
         <Button
@@ -45,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_price"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="12dp"
             android:layout_toRightOf="@+id/decrease"
             android:textSize="15dp" />
@@ -55,9 +53,10 @@
             android:layout_width="40dp"
             android:layout_height="35dp"
             android:layout_below="@+id/item_price"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/qty"
+            android:layout_marginBottom="5dp"
             android:onClick="increment"
             android:text="+" />
     </RelativeLayout>
