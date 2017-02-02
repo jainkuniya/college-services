@@ -1,23 +1,18 @@
 package com.example.himanshu.canteen;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.List;
 
-import static com.example.himanshu.canteen.R.id.rl1;
+import static com.example.himanshu.canteen.R.layout.items;
 
 
 /**
@@ -33,10 +28,9 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
         this.itemsList = itemsList;
     }
 
-
     @Override
     public ItemsAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.items, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(items, parent, false);
         return new ItemsAdapter.MyViewHolder(itemView);
     }
 
@@ -52,6 +46,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
         } else {
             holder.relativeLayout.setBackgroundColor(Color.parseColor("#AED581"));
         }
+        final MenuPage a = new MenuPage();
         holder.increment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +55,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
                 holder.qtyItem.setText(String.valueOf(q));
                 holder.relativeLayout.setBackgroundColor(Color.parseColor("#AED581"));
                 itemsList.get(position).setItemQty(q);
+                //a.amulShopItemsQty[position]=q;
+                Singleton.getInstance().getItemsSparseArray().append(item.getS_no(),item);
             }
         });
 
@@ -70,10 +67,16 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
                 if (q > 0) {
                     q = q - 1;
                     holder.qtyItem.setText(String.valueOf(q));
+                    a.amulShopItemsQty[position]=q;
                 }
                 itemsList.get(position).setItemQty(q);
-                if (q == 0)
+                if (q == 0) {
                     holder.relativeLayout.setBackgroundColor(Color.WHITE);
+                    Singleton.getInstance().getItemsSparseArray().remove(item.getS_no());
+                }else
+                {
+                    Singleton.getInstance().getItemsSparseArray().append(item.getS_no(),item);
+                }
             }
         });
     }

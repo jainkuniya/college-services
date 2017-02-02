@@ -18,10 +18,12 @@ public class Startup extends AppCompatActivity {
         Intent intent = new Intent(this, LoginActivity.class);
 
         startActivity(intent);
+        finish();
     }
     public void signup(View view){
         Intent intent = new Intent(this, SignUp.class);
 
         startActivity(intent);
+        finish();
     }
 }

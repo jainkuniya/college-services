@@ -32,14 +32,11 @@ public class MainActivity extends AppCompatActivity {
     private OrderAdapter orderAdapter;
     private ShopAdapter shopAdapter;
 
-    private CardView cardview;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cardview = (CardView) findViewById(R.id.card_view1);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         orderList = new ArrayList<>();
         orderAdapter = new OrderAdapter(orderList);

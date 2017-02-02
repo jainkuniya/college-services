@@ -2,6 +2,7 @@ package com.example.himanshu.canteen;
 
 import android.support.v7.widget.ActionBarOverlayLayout;
 import android.support.v7.widget.RecyclerView;
+import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,25 +10,28 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import static android.R.attr.order;
+
 /**
  * Created by himanshu on 2/2/17.
  */
 
 public class YourOrdersAdapter extends RecyclerView.Adapter<YourOrdersAdapter.MyViewHolder> {
 
-    private List<YourOrders> yourOrdersList;
+    private SparseArray<Items> itemsSparseArray;
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView itemName, totalRupees;
+        public TextView itemName, qty, price, amount;
 
         public MyViewHolder(View view) {
             super(view);
             itemName = (TextView) view.findViewById(R.id.itemName);
-            totalRupees = (TextView) view.findViewById(R.id.totalRupees);
+            qty = (TextView) view.findViewById(R.id.totalQty);
+            amount = (TextView) view.findViewById(R.id.amount);
         }
     }
 
-    public YourOrdersAdapter(List<YourOrders> yourOrdersList) {
-        this.yourOrdersList=yourOrdersList;
+    public YourOrdersAdapter(SparseArray<Items> itemsSparseArray) {
+        this.itemsSparseArray=itemsSparseArray;
     }
 
     @Override
@@ -38,13 +42,15 @@ public class YourOrdersAdapter extends RecyclerView.Adapter<YourOrdersAdapter.My
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        YourOrders order = yourOrdersList.get(position);
+        int key = itemsSparseArray.keyAt(position);
+        Items order = itemsSparseArray.get(key);
         holder.itemName.setText(order.getItemName());
-        holder.totalRupees.setText("\u20b9 " + String.valueOf(order.getTotalRupees()));
+        holder.qty.setText(String.valueOf(order.getItemQty())+" * "+String.valueOf(order.getItemPrice()));
+        holder.amount.setText("\u20b9" + String.valueOf(order.getItemPrice()*order.getItemQty()));
     }
 
     @Override
     public int getItemCount() {
-        return yourOrdersList.size();
+        return itemsSparseArray.size();
     }
 }

@@ -2,8 +2,6 @@ package com.example.himanshu.canteen;
 
 import android.content.Context;
 import android.content.Intent;
-import android.provider.ContactsContract;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +16,6 @@ import java.util.List;
 /**
  * Created by himanshu on 10/12/16.
  */
-import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> {
     private Context mContext;
@@ -54,7 +50,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> 
         holder.shopCover.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(mContext, AmulShop.class);
+                intent = new Intent(mContext, MenuPage.class);
                 intent.putExtra("shopId", shop.getId());
 
                 mContext.startActivity(intent);
