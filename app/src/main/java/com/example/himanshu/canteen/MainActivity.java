@@ -28,12 +28,14 @@ public class MainActivity extends AppCompatActivity {
     private List<Shop> shopList;
 
     private RecyclerView recyclerView, recyclerView1;
+
     private OrderAdapter orderAdapter;
     private ShopAdapter shopAdapter;
+
     private CardView cardview;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -53,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView.LayoutManager sLayoutManager = new GridLayoutManager(this, 2);
         recyclerView1.setLayoutManager(sLayoutManager);
-        recyclerView1.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
-        recyclerView1.setItemAnimator(new DefaultItemAnimator());
         recyclerView1.setAdapter(shopAdapter);
 
         prepareOrder();
@@ -64,18 +64,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void prepareOrder() {
-        Order order = new Order("J","Juice Shop","60");
+        Order order = new Order("J", "Juice Shop", "60");
         orderList.add(order);
-        order = new Order("L","Laundry","40");
+        order = new Order("L", "Laundry", "40");
         orderList.add(order);
-        order = new Order("F","Food Barn","220");
+        order = new Order("F", "Food Barn", "220");
         orderList.add(order);
 
         orderAdapter.notifyDataSetChanged();
     }
 
     private void prepareShops() {
-        int[] covers = new int[] {
+        int[] covers = new int[]{
                 R.drawable.amul_shop,
                 R.drawable.food_barn,
                 R.drawable.juice_shop,
@@ -94,43 +94,6 @@ public class MainActivity extends AppCompatActivity {
         shopList.add(s);
 
         shopAdapter.notifyDataSetChanged();
-    }
-
-    public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
-
-        private int spanCount;
-        private int spacing;
-        private boolean includeEdge;
-
-        public GridSpacingItemDecoration(int spanCount, int spacing, boolean includeEdge) {
-            this.spanCount = spanCount;
-            this.spacing = spacing;
-            this.includeEdge = includeEdge;
-        }
-        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-            int position = parent.getChildAdapterPosition(view); // item position
-            int column = position % spanCount; // item column
-
-            if (includeEdge) {
-                outRect.left = spacing - column * spacing / spanCount; // spacing - column * ((1f / spanCount) * spacing)
-                outRect.right = (column + 1) * spacing / spanCount; // (column + 1) * ((1f / spanCount) * spacing)
-
-                if (position < spanCount) { // top edge
-                    outRect.top = spacing;
-                }
-                outRect.bottom = spacing; // item bottom
-            } else {
-                outRect.left = column * spacing / spanCount; // column * ((1f / spanCount) * spacing)
-                outRect.right = spacing - (column + 1) * spacing / spanCount; // spacing - (column + 1) * ((1f /    spanCount) * spacing)
-                if (position >= spanCount) {
-                    outRect.top = spacing; // item top
-                }
-            }
-        }
-    }
-    private int dpToPx(int dp) {
-        Resources r = getResources();
-        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 }
 

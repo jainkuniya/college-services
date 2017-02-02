@@ -66,20 +66,30 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(merchantPage);
 
             }
+            else /*if((id!="2" && password!="2")||(password!="1"&& id!="1"))*/{
+                Toast.makeText(getApplicationContext(),"incorrect id password!!",
+                        Toast.LENGTH_SHORT).show();
+
+            }
 
         }
-        if(g==2){
+        else if(g==2){
             if(id.equals("2")&&password.equals("2")) {
 
                 Intent mainPage = new Intent(this, MainActivity.class);
                 startActivity(mainPage);
             }
+            else /*if((id!="2" && password!="2")||(password!="1"&& id!="1"))*/{
+                Toast.makeText(getApplicationContext(),"incorrect id password!!",
+                        Toast.LENGTH_SHORT).show();
+
+            }
         }
-        else if((id!="2" && password!="2")||(password!="1"&& id!="1")){
+        /*else if((id!="2" && password!="2")||(password!="1"&& id!="1")){
             Toast.makeText(getApplicationContext(),"incorrect id password!!",
                     Toast.LENGTH_SHORT).show();
 
-        }
+        }*/
 
     }
     public void checkedRadio(View view){
