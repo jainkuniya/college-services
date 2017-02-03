@@ -1,19 +1,26 @@
 package com.example.himanshu.canteen;
 
+import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.SparseArray;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.himanshu.canteen.R.layout.items;
 
 /**
  * Created by himanshu on 2/2/17.
  */
 
 public class BillPage extends AppCompatActivity {
-    private List<YourOrders> yourOrdersList;
     private RecyclerView orders;
     private YourOrdersAdapter yourOrdersAdapter;
 
@@ -23,24 +30,21 @@ public class BillPage extends AppCompatActivity {
         setContentView(R.layout.bill_page);
 
         orders = (RecyclerView) findViewById(R.id.orders);
-        yourOrdersList = new ArrayList<>();
-        yourOrdersAdapter = new YourOrdersAdapter(yourOrdersList);
+        yourOrdersAdapter = new YourOrdersAdapter(Singleton.getInstance().getItemsSparseArray());
 
         RecyclerView.LayoutManager orderLayoutManager = new LinearLayoutManager(getApplicationContext());
         orders.setLayoutManager(orderLayoutManager);
         orders.setAdapter(yourOrdersAdapter);
 
-        prepareBill();
-    }
+       findViewById(R.id.confirm).setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Singleton.getInstance().getItemsSparseArray().clear();;
+               Intent intent = new Intent(BillPage.this, MainActivity.class);
+               startActivity(intent);
+               finish();
+           }
+       });
 
-    private void prepareBill() {
-        YourOrders yourOrders = new YourOrders("Aloo Patties", 40);
-        yourOrdersList.add(yourOrders);
-        YourOrders yourOrders1 = new YourOrders("Aloo Patties", 40);
-        yourOrdersList.add(yourOrders1);
-        YourOrders yourOrders2 = new YourOrders("Aloo Patties", 40);
-        yourOrdersList.add(yourOrders2);
-        YourOrders yourOrders3 = new YourOrders("Aloo Patties", 40);
-        yourOrdersList.add(yourOrders3);
     }
 }

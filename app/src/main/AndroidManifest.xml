@@ -18,8 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".merchantPage"></activity>
-        <activity android:name=".AmulShop"
+        <activity android:name=".MerchantPage"></activity>
+        <activity android:name=".MenuPage"
             android:label="Amul Shop"/>
         <activity android:name=".BillPage"
             android:label="Order Bill"/>

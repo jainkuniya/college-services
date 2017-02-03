@@ -10,7 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class merchantPage extends AppCompatActivity {
+public class MerchantPage extends AppCompatActivity {
     private List<OrderToMerchant> orderList;
     private RecyclerView recyclerView;
     private OrderMerchantAdapter OrderMerchantAdapter;
