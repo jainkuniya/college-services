@@ -1,5 +1,6 @@
 package com.example.himanshu.canteen;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -21,6 +22,8 @@ public class MenuPage extends AppCompatActivity {
     private RecyclerView recyclerView2;
     private List<Items> itemsList;
     private ItemsAdapter itemsAdapter;
+    public static Activity MP;
+
     private Button billOpen;
     int shpoId = 0;
     String amulShopItems[] = {"Aloo Patties", "Masala Patties", "Cheese Patties", "Tandoori Patties", "Amul Cool", "Cheese Sandwich", "Burger", "Cream Roll", "5-Star", "Dairy Milk", "Perk", "Amul Milk", "Sprite", "Coke", "Thumbs Up"};
@@ -41,6 +44,7 @@ public class MenuPage extends AppCompatActivity {
         setContentView(R.layout.item_list);
 
         billOpen = (Button) findViewById(R.id.billOpen);
+        MP=this;
 
         shpoId = getIntent().getIntExtra("shopId", 0);
         recyclerView2 = (RecyclerView) findViewById(R.id.recycler_view2);

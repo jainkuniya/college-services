@@ -1,5 +1,6 @@
 package com.example.himanshu.canteen;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -31,11 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
     private OrderAdapter orderAdapter;
     private ShopAdapter shopAdapter;
+    public static Activity MA;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MA=this;
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         orderList = new ArrayList<>();
