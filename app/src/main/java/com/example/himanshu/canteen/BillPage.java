@@ -14,6 +14,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.os.Build.VERSION_CODES.M;
 import static com.example.himanshu.canteen.R.layout.items;
 
 /**
@@ -43,6 +44,8 @@ public class BillPage extends AppCompatActivity {
                Intent intent = new Intent(BillPage.this, MainActivity.class);
                startActivity(intent);
                finish();
+               MenuPage.MP.finish();
+               MainActivity.MA.finish();
            }
        });
 

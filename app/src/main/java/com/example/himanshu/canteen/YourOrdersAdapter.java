@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import static android.R.attr.order;
+import static com.example.himanshu.canteen.R.id.amount;
 
 /**
  * Created by himanshu on 2/2/17.
@@ -20,7 +21,7 @@ public class YourOrdersAdapter extends RecyclerView.Adapter<YourOrdersAdapter.My
 
     private SparseArray<Items> itemsSparseArray;
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView itemName, qty, price, amount;
+        public TextView itemName, qty, amount;
 
         public MyViewHolder(View view) {
             super(view);
