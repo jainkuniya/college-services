@@ -55,7 +55,6 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
                 holder.qtyItem.setText(String.valueOf(q));
                 holder.relativeLayout.setBackgroundColor(Color.parseColor("#AED581"));
                 itemsList.get(position).setItemQty(q);
-                //a.amulShopItemsQty[position]=q;
                 Singleton.getInstance().getItemsSparseArray().append(item.getS_no(),item);
             }
         });
@@ -67,7 +66,6 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
                 if (q > 0) {
                     q = q - 1;
                     holder.qtyItem.setText(String.valueOf(q));
-                    a.amulShopItemsQty[position]=q;
                 }
                 itemsList.get(position).setItemQty(q);
                 if (q == 0) {

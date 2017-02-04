@@ -69,15 +69,14 @@
                         android:layout_marginLeft="70dp"
                         android:layout_marginRight="58dp"
                         android:onClick="checkedRadio"
-                        android:text="merchant" />
+                        android:text="Merchant" />
 
                     <RadioButton
                         android:id="@+id/users"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="checkedRadio"
-
-                        android:text="user" />
+                        android:text="User" />
                 </RadioGroup>
 
                 <TextView

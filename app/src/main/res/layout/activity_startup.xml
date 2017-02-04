@@ -13,7 +13,7 @@
         android:layout_above="@+id/merchant"
         />
     <Button
-        android:id="@+id/merchant"
+        android:id="@+id/firstLogIn"
         android:layout_width="170dp"
         android:background="@drawable/button_states"
         android:layout_centerInParent="true"
@@ -23,13 +23,13 @@
         android:onClick="login"
         android:layout_height="wrap_content" />
     <Button
-        android:id="@+id/user"
+        android:id="@+id/firstSignUp"
         android:layout_width="170dp"
         android:background="@drawable/button_states"
         android:text="SIGN UP"
         android:textColor="@color/cardview_light_background"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/merchant"
+        android:layout_below="@id/firstLogIn"
         android:layout_marginTop="16dp"
         android:onClick="signup"
         android:layout_height="wrap_content" />
