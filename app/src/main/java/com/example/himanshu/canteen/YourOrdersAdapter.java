@@ -1,5 +1,7 @@
 package com.example.himanshu.canteen;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.widget.ActionBarOverlayLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
@@ -20,6 +22,7 @@ import static com.example.himanshu.canteen.R.id.amount;
 public class YourOrdersAdapter extends RecyclerView.Adapter<YourOrdersAdapter.MyViewHolder> {
 
     private SparseArray<Items> itemsSparseArray;
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView itemName, qty, amount;
 
@@ -32,7 +35,7 @@ public class YourOrdersAdapter extends RecyclerView.Adapter<YourOrdersAdapter.My
     }
 
     public YourOrdersAdapter(SparseArray<Items> itemsSparseArray) {
-        this.itemsSparseArray=itemsSparseArray;
+        this.itemsSparseArray = itemsSparseArray;
     }
 
     @Override
@@ -45,13 +48,16 @@ public class YourOrdersAdapter extends RecyclerView.Adapter<YourOrdersAdapter.My
     public void onBindViewHolder(MyViewHolder holder, int position) {
         int key = itemsSparseArray.keyAt(position);
         Items order = itemsSparseArray.get(key);
+
+
         holder.itemName.setText(order.getItemName());
-        holder.qty.setText(String.valueOf(order.getItemQty())+" * "+String.valueOf(order.getItemPrice()));
-        holder.amount.setText("\u20b9" + String.valueOf(order.getItemPrice()*order.getItemQty()));
+        holder.qty.setText(String.valueOf(order.getItemQty()) + " * " + String.valueOf(order.getItemPrice()));
+        holder.amount.setText("\u20b9" + String.valueOf(order.getItemPrice() * order.getItemQty()));
     }
 
     @Override
     public int getItemCount() {
         return itemsSparseArray.size();
     }
+
 }

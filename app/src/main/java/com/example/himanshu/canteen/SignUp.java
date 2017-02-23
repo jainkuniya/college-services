@@ -1,35 +1,30 @@
 package com.example.himanshu.canteen;
 
-import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.firebase.client.Firebase;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseTooManyRequestsException;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-
-import static android.R.attr.data;
+import com.muddzdev.styleabletoastlibrary.StyleableToast;
 
 public class SignUp extends AppCompatActivity {
 
     private EditText name, idNo, password, mobileNo;
     private Button signUp;
     private RadioButton merchant, user;
-    private int checkValue=2;
+    private int checkValue = 2;
     private String getName, getPassword, getIdNo, getMobileNo;
+    private StyleableToast st1;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +32,10 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         FirebaseApp.initializeApp(this);
+
+        mToolbar = (Toolbar) findViewById(R.id.action_bar);
+        mToolbar.setTitle("Sign Up");
+        setSupportActionBar(mToolbar);
 
         name = (EditText) findViewById(R.id.name);
         idNo = (EditText) findViewById(R.id.rollno);
@@ -58,15 +57,23 @@ public class SignUp extends AppCompatActivity {
                     getPassword = password.getText().toString();
 
                     if (getName.isEmpty() || getPassword.isEmpty() || getMobileNo.isEmpty() || getIdNo.isEmpty()) {
-                        Toast.makeText(getApplicationContext(), "Fill Details First", Toast.LENGTH_SHORT).show();
+                        st1 = new StyleableToast(getApplicationContext(), "Please, Fill Details First", Toast.LENGTH_SHORT);
+                        st1.setBackgroundColor(Color.parseColor("#865aff"));
+                        st1.setTextColor(Color.WHITE);
+                        st1.setIcon(R.drawable.ic_info_outline_white_24dp);
+                        st1.show();
                     } else {
                         DatabaseReference myData = database.getReference("Merchant");
                         myData.child(getIdNo).child("Name").setValue(getName);
                         myData.child(getIdNo).child("Mobile No").setValue(getMobileNo);
                         myData.child(getIdNo).child("Password").setValue(getPassword);
-                        Toast.makeText(getApplicationContext(), "Successfully Done", Toast.LENGTH_SHORT).show();
-                        Intent intent =  new Intent(SignUp.this, Startup.class);
-                        startActivity(intent);
+                        st1 = new StyleableToast(getApplicationContext(), "Successfully Done", Toast.LENGTH_SHORT);
+                        st1.setBackgroundColor(Color.parseColor("#689F38"));
+                        st1.setTextColor(Color.WHITE);
+                        st1.setIcon(R.drawable.ic_done_white_24dp);
+                        st1.show();
+                        Intent intent1 = new Intent(SignUp.this, Startup.class);
+                        startActivity(intent1);
                         finish();
                     }
                 }
@@ -78,15 +85,23 @@ public class SignUp extends AppCompatActivity {
                     getPassword = password.getText().toString();
 
                     if (getName.isEmpty() || getPassword.isEmpty() || getMobileNo.isEmpty() || getIdNo.isEmpty()) {
-                        Toast.makeText(getApplicationContext(), "Fill Details First", Toast.LENGTH_SHORT).show();
+                        st1 = new StyleableToast(getApplicationContext(), "Please, Fill Details First", Toast.LENGTH_SHORT);
+                        st1.setBackgroundColor(Color.parseColor("#865aff"));
+                        st1.setTextColor(Color.WHITE);
+                        st1.setIcon(R.drawable.ic_info_outline_white_24dp);
+                        st1.show();
                     } else {
                         DatabaseReference myData = database.getReference("Client");
                         myData.child(getIdNo).child("Name").setValue(getName);
                         myData.child(getIdNo).child("Mobile No").setValue(getMobileNo);
                         myData.child(getIdNo).child("Password").setValue(getPassword);
-                        Toast.makeText(getApplicationContext(), "Successfully Done", Toast.LENGTH_SHORT).show();
-                        Intent intent =  new Intent(SignUp.this, Startup.class);
-                        startActivity(intent);
+                        st1 = new StyleableToast(getApplicationContext(), "Successfully Done", Toast.LENGTH_SHORT);
+                        st1.setBackgroundColor(Color.parseColor("#689F38"));
+                        st1.setTextColor(Color.WHITE);
+                        st1.setIcon(R.drawable.ic_done_white_24dp);
+                        st1.show();
+                        Intent intent2 = new Intent(SignUp.this, Startup.class);
+                        startActivity(intent2);
                         finish();
                     }
                 }

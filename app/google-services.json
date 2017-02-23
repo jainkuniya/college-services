@@ -1,0 +1,48 @@
+// firebase database information
+{
+  "project_info": {
+    "project_number": "539836514217",
+    "firebase_url": "https://college-services-47676.firebaseio.com",
+    "project_id": "college-services-47676",
+    "storage_bucket": "college-services-47676.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539836514217:android:9e081d89587d792c",
+        "android_client_info": {
+          "package_name": "com.example.himanshu.canteen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539836514217-510dib53gl9vp12fn70o0rj0bq53fcua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE1w1lb80bNiBmRfdcpnmMtqHsunQhDjg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539836514217-510dib53gl9vp12fn70o0rj0bq53fcua.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

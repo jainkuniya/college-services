@@ -13,12 +13,17 @@ dependencies {
     // Recycler View
     compile 'com.android.support:recyclerview-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
 
     // Glide View
     compile 'com.github.bumptech.glide:glide:3.7.0'
 
+    // Firebase Dependencies
     compile 'com.google.firebase:firebase-database:10.0.1'
     compile 'com.firebase:firebase-client-android:2.5.0'
+
+    // Toast dependencies
+    compile 'com.muddzdev:styleabletoast:1.0.5'
 
 
     testCompile 'junit:junit:4.12'
@@ -29,7 +34,7 @@ android {
     buildToolsVersion "24.0.1"
     defaultConfig {
         applicationId "com.example.himanshu.canteen"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"

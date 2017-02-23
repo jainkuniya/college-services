@@ -1,103 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="5dp">
-
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Your Orders"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
     <LinearLayout
-        android:id="@+id/description"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_below="@+id/text"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="35dp"
-        android:orientation="horizontal"
-        android:weightSum="100">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="48"
-            android:text="Items"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+        <include
+            layout="@layout/action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:text="Qty"
-            android:textColor="#000000"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:text="*"
-            android:textColor="#000000"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="15"
-            android:text="Price"
-            android:textColor="#000000"
-            android:textSize="20sp" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="25"
-            android:text="Amt"
-            android:textColor="#000000"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/orderedItems"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/description"
-        android:layout_gravity="center"
-        android:elevation="4dp"
-        card_view:cardCornerRadius="@dimen/card_album_radius">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/orders"
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="6dp"
-            android:scrollbars="vertical">
+            android:layout_margin="5dp">
 
-        </android.support.v7.widget.RecyclerView>
-    </android.support.v7.widget.CardView>
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:text="Your Orders"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/confirm"
+            <LinearLayout
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/text"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="35dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="48"
+                    android:text="Items"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:text="Qty"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="*"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:text="Price"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="25"
+                    android:text="Amt"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/orderedItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description"
+                android:layout_gravity="center"
+                android:elevation="4dp"
+                card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/orders"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="6dp"
+                    android:scrollbars="vertical">
+
+                </android.support.v7.widget.RecyclerView>
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:id="@+id/confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:onClick="paytm"
+                android:text="Confirm"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Confirm"
-        android:textColor="#000000"
-        android:textSize="15sp" />
-</RelativeLayout>
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/user_side_nav" />
+</android.support.v4.widget.DrawerLayout>

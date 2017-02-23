@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">College-Services</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_previousOrders">Previous Orders</string>
+    <string name="nav_changeItems">Change Items</string>
+    <string name="nav_logout">Logout</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string-array name="user_side_item_titles">
+        <item>Home</item>
+        <item>Previous Orders</item>
+        <item>Logout</item>
+    </string-array>
+    <string-array name="merchant_side_item_titles">
+        <item>Home</item>
+        <item>Change Items</item>
+        <item>Logout</item>
+    </string-array>
 </resources>
