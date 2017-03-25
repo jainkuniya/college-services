@@ -2,9 +2,9 @@
 
     <solid android:color="@color/textViewBG" />
     <corners
-        android:bottomLeftRadius="30dp"
-        android:bottomRightRadius="30dp"
-        android:topLeftRadius="30dp"
-        android:topRightRadius="30dp" />
+        android:bottomLeftRadius="80dp"
+        android:bottomRightRadius="80dp"
+        android:topLeftRadius="80dp"
+        android:topRightRadius="80dp" />
 
 </shape>
