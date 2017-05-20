@@ -5,11 +5,19 @@ package com.example.himanshu.canteen;
  */
 
 public class Items {
-    private String itemName;
+    private String id, itemName;
     private int itemQty, s_no, itemPrice;
+    private boolean isAvailable;
 
     public Items() {
 
+    }
+
+    public Items(String id, String itemName,int itemPrice, boolean isAvailable) {
+        this.id = id;
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.isAvailable = isAvailable;
     }
 
     public Items(int s_no, String itemName, int itemPrice, int itemQty) {
@@ -49,5 +57,17 @@ public class Items {
 
     public int getItemQty() {
         return itemQty;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setIsAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 }

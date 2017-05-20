@@ -1,12 +1,10 @@
-package com.example.himanshu.canteen;
+package com.example.himanshu.canteen.client;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,8 +16,14 @@ import android.util.SparseArray;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.himanshu.canteen.Items;
+import com.example.himanshu.canteen.LoginActivity;
+import com.example.himanshu.canteen.MainActivity;
+import com.example.himanshu.canteen.PreviousOrders;
+import com.example.himanshu.canteen.R;
+import com.example.himanshu.canteen.Singleton;
+import com.example.himanshu.canteen.YourOrdersAdapter;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -159,7 +163,8 @@ public class BillPage extends AppCompatActivity {
         drawer.closeDrawers();
 
         // refresh toolbar menu
-        invalidateOptionsMenu();
+
+        //invalidateOptionsMenu();
     }
 
     private void setToolbarTitle() {

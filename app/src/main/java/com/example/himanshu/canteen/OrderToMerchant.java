@@ -5,35 +5,44 @@ package com.example.himanshu.canteen;
  */
 
 public class OrderToMerchant {
-    private String initial, user_id, total_price;
+    private String id, name, items, totalPrice;
+    private boolean isVerified, isDelivered;
+    private boolean verified;
 
-    public OrderToMerchant(String initial, String user_id, String total_price) {
-        this.initial=initial;
-        this.user_id=user_id;
-        this.total_price=total_price;
+    public OrderToMerchant(String id, String name, String items, String totalPrice, boolean isVerified, boolean isDelivered) {
+        this.id = id;
+        this.name = name;
+        this.items = items;
+        this.isVerified = isVerified;
+        this.isDelivered = isDelivered;
+        this.totalPrice = totalPrice;
     }
 
-    public String getInitial() {
-        return initial;
+    public boolean isVerified() {
+        return isVerified;
     }
 
-    public void setInitial(String initial) {
-        this.initial=initial;
+    public boolean isDelivered() {
+        return isDelivered;
     }
 
-    public String getShop_name() {
-        return  user_id;
+    public String getId() {
+        return id;
     }
 
-    public void setShop_name(String shop_name) {
-        this.user_id=shop_name;
+    public String getName() {
+        return name;
     }
 
-    public String getTotal_price() {
-        return total_price;
+    public String getItems() {
+        return items;
     }
 
-    public void setTotal_price(String total_price) {
-        this.total_price=total_price;
+    public String getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setVerified(boolean verified) {
+        this.verified = verified;
     }
 }
