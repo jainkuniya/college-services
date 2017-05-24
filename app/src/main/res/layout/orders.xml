@@ -22,8 +22,12 @@
             android:gravity="center"
             android:textColor="#ffffff"
             android:textSize="24dp" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/llp01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -61,15 +65,19 @@
                 android:layout_toRightOf="@id/shop_name" />
 
         </LinearLayout>
-
+    <LinearLayout
+        android:id="@+id/llp02"
+        android:layout_below="@id/llp01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
         <TextView
             android:id="@+id/tvStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="Status" />
-
-
+    </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>
 

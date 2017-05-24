@@ -232,4 +232,10 @@ public class MenuPage extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        prepareItems();
+    }
 }

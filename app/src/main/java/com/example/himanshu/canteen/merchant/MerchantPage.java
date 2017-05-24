@@ -125,7 +125,7 @@ public class MerchantPage extends AppCompatActivity {
         drawer.closeDrawers();
 
         // refresh toolbar menu
-        invalidateOptionsMenu();
+        //invalidateOptionsMenu();
     }
 
     private void setToolbarTitle() {
@@ -191,12 +191,15 @@ public class MerchantPage extends AppCompatActivity {
         DatabaseReference myData = database.getReference("Merchant").child(sharedPref.getString("merchantID", "")).child("OrderID");
         myData.addListenerForSingleValueEvent(new ValueEventListener() {
 
+
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 orderList = new ArrayList<OrderToMerchant>();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     DatabaseReference databaseReference = database.getReference("Orders").child(String.valueOf(postSnapshot.getValue()));
                     databaseReference.addValueEventListener(new ValueEventListener() {
+
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (String.valueOf(dataSnapshot.child("IsOrderDelievered").getValue()).equals("0")) {
@@ -230,6 +233,7 @@ public class MerchantPage extends AppCompatActivity {
                         DatabaseReference myData = database.getReference("Orders");
                         myData.child(id).child("IsOrderConfirmed").setValue(isVerified);
                         myData.child(id).child("IsOrderDelievered").setValue(isDelivered);
+                        //notifyDataSetChanged();
                     }
                 };
                 recyclerView.setAdapter(orderMerchantAdapter);
@@ -237,6 +241,7 @@ public class MerchantPage extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+
 
             }
         });

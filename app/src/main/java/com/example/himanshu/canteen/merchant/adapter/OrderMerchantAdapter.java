@@ -53,7 +53,8 @@ public abstract class OrderMerchantAdapter extends RecyclerView.Adapter<OrderMer
     @Override
     public void onBindViewHolder(final OrderMerchantAdapter.MyViewHolder holder, final int position) {
         final OrderToMerchant order = orderList.get(position);
-        holder.initial.setText(order.getName().charAt(order.getName().length() - 1) + "");
+       // holder.initial.setText(order.getName().charAt(order.getName().length()-1) + "");
+        holder.initial.setText("AS");
         holder.tvName.setText(order.getName());
         holder.tvItems.setText(order.getItems());
         holder.tvTotalPrice.setText("\u20b9 " + order.getTotalPrice());
@@ -81,7 +82,8 @@ public abstract class OrderMerchantAdapter extends RecyclerView.Adapter<OrderMer
             public void onClick(View v) {
                 updateOrder(order.getId(), "1", "1");
                 orderList.remove(position);
-                notifyDataSetChanged();
+
+               notifyDataSetChanged();
             }
         });
     }

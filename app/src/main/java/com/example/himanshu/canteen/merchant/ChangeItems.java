@@ -89,10 +89,12 @@ public class ChangeItems extends AppCompatActivity {
                 ArrayList<Items> itemses = new ArrayList<Items>();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     try {
-                        Items items = new Items(String.valueOf(postSnapshot.getKey()),
+                        Items items = new Items((postSnapshot.getKey()),
                                 String.valueOf(postSnapshot.child("name").getValue()),
                                 Integer.parseInt(String.valueOf(postSnapshot.child("price").getValue())),
                                 String.valueOf(postSnapshot.child("isAvailable").getValue()).equals("1"));
+                        long l = System.currentTimeMillis();
+                            items.setS_no(l);
                         itemses.add(items);
                     } catch (NumberFormatException e) {
                         e.printStackTrace();

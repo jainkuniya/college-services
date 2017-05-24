@@ -11,6 +11,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
+
         <TextView
             android:id="@+id/shop_name"
             android:layout_width="33dp"
@@ -21,8 +22,11 @@
             android:gravity="center"
             android:textColor="#ffffff"
             android:textSize="24dp" />
-
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <LinearLayout
+            android:id="@+id/ll1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -48,7 +52,9 @@
                 android:layout_below="@+id/shop"
                 android:layout_marginBottom="3dp"
                 android:layout_marginLeft="17dp"
-                android:layout_toRightOf="@id/shop_name" />
+                android:layout_toRightOf="@id/shop_name"
+
+                />
 
             <TextView
                 android:id="@+id/tvTotalPrice"
@@ -62,9 +68,11 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
+            android:layout_below="@id/ll1"
             android:orientation="horizontal">
 
             <CheckBox
@@ -86,6 +94,7 @@
                 android:textColor="#FFFFFF" />
 
         </LinearLayout>
-
+        </RelativeLayout>
     </LinearLayout>
+
 </android.support.v7.widget.CardView>

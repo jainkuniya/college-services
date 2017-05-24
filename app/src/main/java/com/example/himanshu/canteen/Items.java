@@ -6,7 +6,8 @@ package com.example.himanshu.canteen;
 
 public class Items {
     private String id, itemName;
-    private int itemQty, s_no, itemPrice;
+    private int itemQty, itemPrice;
+    private Long  s_no;
     private boolean isAvailable;
 
     public Items() {
@@ -20,18 +21,18 @@ public class Items {
         this.isAvailable = isAvailable;
     }
 
-    public Items(int s_no, String itemName, int itemPrice, int itemQty) {
+    public Items(Long s_no, String itemName, int itemPrice, int itemQty) {
         this.s_no = s_no;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemQty = itemQty;
     }
 
-    public void setS_no(int s_no) {
+    public void setS_no(Long s_no) {
         this.s_no = s_no;
     }
 
-    public int getS_no() {
+    public Long getS_no() {
         return s_no;
     }
 
