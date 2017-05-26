@@ -54,5 +54,5 @@ freeline.py
 freeline/
 freeline_project_description.json
 
-#firebase
+# firebase
 google-services.json

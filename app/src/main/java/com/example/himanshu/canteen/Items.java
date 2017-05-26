@@ -5,25 +5,34 @@ package com.example.himanshu.canteen;
  */
 
 public class Items {
-    private String itemName;
-    private int itemQty, s_no, itemPrice;
+    private String id, itemName;
+    private int itemQty, itemPrice;
+    private Long  s_no;
+    private boolean isAvailable;
 
     public Items() {
 
     }
 
-    public Items(int s_no, String itemName, int itemPrice, int itemQty) {
+    public Items(String id, String itemName,int itemPrice, boolean isAvailable) {
+        this.id = id;
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.isAvailable = isAvailable;
+    }
+
+    public Items(Long s_no, String itemName, int itemPrice, int itemQty) {
         this.s_no = s_no;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemQty = itemQty;
     }
 
-    public void setS_no(int s_no) {
+    public void setS_no(Long s_no) {
         this.s_no = s_no;
     }
 
-    public int getS_no() {
+    public Long getS_no() {
         return s_no;
     }
 
@@ -49,5 +58,17 @@ public class Items {
 
     public int getItemQty() {
         return itemQty;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setIsAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 }

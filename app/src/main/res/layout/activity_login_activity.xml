@@ -70,7 +70,9 @@
                         android:layout_height="wrap_content"
                         android:layout_above="@+id/login"
                         android:checkedButton="@+id/users"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+
+                        >
 
                         <RadioButton
                             android:id="@+id/merchants"

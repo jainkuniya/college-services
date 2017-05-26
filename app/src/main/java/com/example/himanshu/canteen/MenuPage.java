@@ -5,10 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -21,7 +17,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.himanshu.canteen.client.BillPage;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 /**
  * Created by himanshu on 12/12/16.
@@ -30,8 +34,6 @@ import android.widget.Toast;
 public class MenuPage extends AppCompatActivity {
 
     private RecyclerView recyclerView2;
-    private List<Items> itemsList;
-    private ItemsAdapter itemsAdapter;
     public static Activity MP;
     private Toolbar mToolbar;
     private Handler mHandler;
@@ -51,15 +53,6 @@ public class MenuPage extends AppCompatActivity {
 
     private Button billOpen;
     int shopId = 0;
-    String amulShopItems[] = {"Aloo Patties", "Masala Patties", "Cheese Patties", "Tandoori Patties", "Amul Cool", "Cheese Sandwich", "Burger", "Cream Roll", "5-Star", "Dairy Milk", "Perk", "Amul Milk", "Sprite", "Coke", "Thumbs Up"};
-    int amulShopItemsPrice[] = {10, 15, 20, 25, 25, 30, 30, 10, 25, 20, 10, 18, 45, 45, 45};
-    public int amulShopItemsQty[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    String juiceShopItems[] = {"Banana Juice", "Pineapple Juice", "Apple Juice", "Mango Juice", "Orange Juice", "Bread", "Maggie", "BhelPuri", "Tea", "Minute Maid", "Coffee", "Papaya Juice"};
-    int juiceShopItemsPrice[] = {20, 20, 20, 20, 20, 12, 22, 25, 10, 10, 15, 20};
-    public int juiceShopItemsQty[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    String foodBarnItems[] = {"Aloo Parantha", "Gobhi Parantha", "Muli Parantha", "Paneer Parantha", "Chilli Parantha", "Plain Roti", "Tandoori Roti", "Rumali Roti", "Palak Paneer", "Kadai Paneer", "Veg Pulao", "Chicken Pualo", "Chana Masala", "Dal Tadka"};
-    int foodBarnItemsPrice[] = {30, 30, 30, 40, 50, 5, 7, 7, 140, 160, 80, 120, 120, 100};
-    public int foodBarnItemsQty[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -104,12 +97,8 @@ public class MenuPage extends AppCompatActivity {
         }
 
         recyclerView2 = (RecyclerView) findViewById(R.id.recycler_view2);
-        itemsList = new ArrayList<>();
-        itemsAdapter = new ItemsAdapter(this, itemsList);
-
         RecyclerView.LayoutManager sLayoutManager = new GridLayoutManager(this, 2);
         recyclerView2.setLayoutManager(sLayoutManager);
-        recyclerView2.setAdapter(itemsAdapter);
 
         prepareItems();
 
@@ -211,29 +200,42 @@ public class MenuPage extends AppCompatActivity {
     }
 
     private void prepareItems() {
-        if (shopId == 1) {
-            mToolbar.setTitle("Amul Shop");
-            for (int i = 0; i < amulShopItems.length; i++) {
-                Items item = new Items(i + 1, amulShopItems[i], amulShopItemsPrice[i], amulShopItemsQty[i]);
-                itemsList.add(item);
+        mToolbar.setTitle("Available Items");
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        String shopId = getIntent().getStringExtra("shopId");
+        DatabaseReference myData = database.getReference("Merchant").child(shopId).child("items");
+        myData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<Items> itemsList = new ArrayList<Items>();
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    try {
+                        if (((String) dataSnapshot1.child("isAvailable").getValue()).equals("1")) {
+                            Items items = new Items(dataSnapshot1.getKey(),
+                                    (String) dataSnapshot1.child("name").getValue(),
+                                    Integer.parseInt(String.valueOf(dataSnapshot1.child("price").getValue())),
+                                    true);
+
+                            itemsList.add(items);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                ItemsAdapter itemsAdapter = new ItemsAdapter(MenuPage.this, itemsList);
+                recyclerView2.setAdapter(itemsAdapter);
             }
-        } else if (shopId == 2) {
-            mToolbar.setTitle("Food Barn");
-            for (int i = 0; i < foodBarnItems.length; i++) {
-                Items item = new Items(i + 1, foodBarnItems[i], foodBarnItemsPrice[i], foodBarnItemsQty[i]);
-                itemsList.add(item);
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
-        } else if (shopId == 3) {
-            mToolbar.setTitle("Juice Shop");
-            for (int i = 0; i < juiceShopItems.length; i++) {
-                Items item = new Items(i + 1, juiceShopItems[i], juiceShopItemsPrice[i], juiceShopItemsQty[i]);
-                itemsList.add(item);
-            }
-        } else if (shopId == 4) {
-            mToolbar.setTitle("Laundry");
-        } else {
-            mToolbar.setTitle("PAL");
-        }
-        itemsAdapter.notifyDataSetChanged();
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        prepareItems();
     }
 }

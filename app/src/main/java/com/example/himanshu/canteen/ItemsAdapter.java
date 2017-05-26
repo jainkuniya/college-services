@@ -22,6 +22,7 @@ import static com.example.himanshu.canteen.R.layout.items;
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder> {
     private Context mContext;
     private List<Items> itemsList;
+    private static Long s=0l;
 
     public ItemsAdapter(Context mContext, List<Items> itemsList) {
         this.mContext = mContext;
@@ -55,7 +56,10 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
                 holder.qtyItem.setText(String.valueOf(q));
                 holder.relativeLayout.setBackgroundColor(Color.parseColor("#AED581"));
                 itemsList.get(position).setItemQty(q);
-                Singleton.getInstance().getItemsSparseArray().append(item.getS_no(),item);
+                item.setS_no(getS());
+                if(!Singleton.getInstance().getItemsSparseArray().containsValue(item))
+                Singleton.getInstance().getItemsSparseArray().put(item.getS_no(),item);
+
             }
         });
 
@@ -70,10 +74,13 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
                 itemsList.get(position).setItemQty(q);
                 if (q == 0) {
                     holder.relativeLayout.setBackgroundColor(Color.WHITE);
-                    Singleton.getInstance().getItemsSparseArray().remove(item.getS_no());
+                    item.setS_no(getS());
+                   Singleton.getInstance().getItemsSparseArray().remove(item.getS_no());
                 }else
                 {
-                    Singleton.getInstance().getItemsSparseArray().append(item.getS_no(),item);
+                    if(!Singleton.getInstance().getItemsSparseArray().containsValue(item) && Integer.parseInt(holder.qtyItem.getText().toString())!=0){
+                    item.setS_no(getS());
+                   Singleton.getInstance().getItemsSparseArray().put(item.getS_no(),item);}
                 }
             }
         });
@@ -99,6 +106,9 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
             decrement = (Button) view.findViewById(R.id.decrease);
             relativeLayout = (RelativeLayout) view.findViewById(R.id.rl1);
         }
+    }
+    public static Long getS(){
+        return s++;
     }
 
 

@@ -1,14 +1,13 @@
-package com.example.himanshu.canteen;
+package com.example.himanshu.canteen.merchant;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Handler;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,17 +17,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.himanshu.canteen.LoginActivity;
+import com.example.himanshu.canteen.OrderToMerchant;
+import com.example.himanshu.canteen.R;
+import com.example.himanshu.canteen.merchant.adapter.OrderMerchantAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class MerchantPage extends AppCompatActivity {
-    private List<OrderToMerchant> orderList;
+    private ArrayList<OrderToMerchant> orderList;
     private RecyclerView recyclerView;
-    private OrderMerchantAdapter OrderMerchantAdapter;
     private CardView cardview;
 
     private Toolbar mToolbar;
-    private Handler mHandler;
     private static final String TAG_HOME = "home";
     private static final String TAG_ITEMS = "change items";
     private static final String TAG_LOGOOUT = "logout";
@@ -43,6 +49,8 @@ public class MerchantPage extends AppCompatActivity {
     private String merchantName, merchantID, merchantInitials;
     public static int navItemIndex = 0;
 
+    SharedPreferences sharedPref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,15 +59,13 @@ public class MerchantPage extends AppCompatActivity {
         cardview = (CardView) findViewById(R.id.card_view_merorder);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_merchant);
         orderList = new ArrayList<>();
-        OrderMerchantAdapter = new OrderMerchantAdapter(orderList);
 
+        sharedPref = getSharedPreferences("merchantInfo", Context.MODE_PRIVATE);
 
         RecyclerView.LayoutManager oLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(oLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(OrderMerchantAdapter);
 
-        mHandler = new Handler();
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.other_nav_view);
         mToggle = new ActionBarDrawerToggle(this, drawer, R.string.open, R.string.close);
@@ -119,7 +125,7 @@ public class MerchantPage extends AppCompatActivity {
         drawer.closeDrawers();
 
         // refresh toolbar menu
-        invalidateOptionsMenu();
+        //invalidateOptionsMenu();
     }
 
     private void setToolbarTitle() {
@@ -144,7 +150,7 @@ public class MerchantPage extends AppCompatActivity {
                         CURRENT_TAG = TAG_HOME;
                         drawer.closeDrawers();
                         break;
-                    case R.id.nav_previousOrders:
+                    case R.id.nav_changeItems:
                         navItemIndex = 1;
                         CURRENT_TAG = TAG_ITEMS;
                         startActivity(new Intent(MerchantPage.this, ChangeItems.class));
@@ -152,9 +158,14 @@ public class MerchantPage extends AppCompatActivity {
                         break;
                     case R.id.nav_logout:
                         navItemIndex = 2;
+                        SharedPreferences sharedPref = getSharedPreferences("merchantInfo", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putString("merchantID", "");
+                        editor.apply();
                         CURRENT_TAG = TAG_LOGOOUT;
                         startActivity(new Intent(MerchantPage.this, LoginActivity.class));
                         drawer.closeDrawers();
+                        finish();
                         break;
                     default:
                         navItemIndex = 0;
@@ -176,14 +187,65 @@ public class MerchantPage extends AppCompatActivity {
     }
 
     private void prepareOrder() {
-        OrderToMerchant order = new OrderToMerchant("H", "Aloo Parantha", "90");
-        orderList.add(order);
-        order = new OrderToMerchant("H", "Pav Bhaji", "50");
-        orderList.add(order);
-        order = new OrderToMerchant("P", "Masala Dosa", "80");
-        orderList.add(order);
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myData = database.getReference("Merchant").child(sharedPref.getString("merchantID", "")).child("OrderID");
+        myData.addListenerForSingleValueEvent(new ValueEventListener() {
 
-        OrderMerchantAdapter.notifyDataSetChanged();
+
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                orderList = new ArrayList<OrderToMerchant>();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    DatabaseReference databaseReference = database.getReference("Orders").child(String.valueOf(postSnapshot.getValue()));
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (String.valueOf(dataSnapshot.child("IsOrderDelievered").getValue()).equals("0")) {
+                                String items = "";
+                                Iterable<DataSnapshot> iterable = dataSnapshot.child("Items").getChildren();
+                                for (DataSnapshot dataSnapshot1 : iterable) {
+                                    items += dataSnapshot1.getKey() + " - " + (String.valueOf(dataSnapshot1.getValue())) + ", ";
+                                }
+                                OrderToMerchant orderToMerchant = new OrderToMerchant(dataSnapshot.getKey(),
+                                        String.valueOf(dataSnapshot.child("StudID").getValue()),
+                                        items,
+                                        String.valueOf(dataSnapshot.child("Total Price").getValue())
+                                        , String.valueOf(dataSnapshot.child("IsOrderConfirmed").getValue()).equals("1"),
+                                        false);
+
+                                orderList.add(orderToMerchant);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+
+                final OrderMerchantAdapter orderMerchantAdapter = new OrderMerchantAdapter(orderList) {
+                    @Override
+                    public void updateOrder(String id, String isVerified, String isDelivered) {
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myData = database.getReference("Orders");
+                        myData.child(id).child("IsOrderConfirmed").setValue(isVerified);
+                        myData.child(id).child("IsOrderDelievered").setValue(isDelivered);
+                        //notifyDataSetChanged();
+                    }
+                };
+                recyclerView.setAdapter(orderMerchantAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+
+            }
+        });
+
     }
 
 }

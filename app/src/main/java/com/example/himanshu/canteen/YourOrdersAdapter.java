@@ -1,19 +1,12 @@
 package com.example.himanshu.canteen;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.support.v7.widget.ActionBarOverlayLayout;
 import android.support.v7.widget.RecyclerView;
-import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.List;
-
-import static android.R.attr.order;
-import static com.example.himanshu.canteen.R.id.amount;
+import java.util.ArrayList;
 
 /**
  * Created by himanshu on 2/2/17.
@@ -21,7 +14,7 @@ import static com.example.himanshu.canteen.R.id.amount;
 
 public class YourOrdersAdapter extends RecyclerView.Adapter<YourOrdersAdapter.MyViewHolder> {
 
-    private SparseArray<Items> itemsSparseArray;
+    private ArrayList<Items> itemsSparseArray;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView itemName, qty, amount;
@@ -34,7 +27,7 @@ public class YourOrdersAdapter extends RecyclerView.Adapter<YourOrdersAdapter.My
         }
     }
 
-    public YourOrdersAdapter(SparseArray<Items> itemsSparseArray) {
+    public YourOrdersAdapter(ArrayList<Items> itemsSparseArray) {
         this.itemsSparseArray = itemsSparseArray;
     }
 
@@ -46,8 +39,8 @@ public class YourOrdersAdapter extends RecyclerView.Adapter<YourOrdersAdapter.My
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        int key = itemsSparseArray.keyAt(position);
-        Items order = itemsSparseArray.get(key);
+       // int key = itemsSparseArray.keyAt(position);
+        Items order = itemsSparseArray.get(position);
 
 
         holder.itemName.setText(order.getItemName());

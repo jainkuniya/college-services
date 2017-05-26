@@ -1,32 +1,26 @@
 package com.example.himanshu.canteen;
 
-import static android.R.attr.id;
-
 /**
  * Created by himanshu on 10/12/16.
  */
 
 public class Shop {
-    private int num;
+    private String num;
     private String name;
     private int thummbnail;
 
-    public Shop() {
-
+    public Shop(String num, String name, int thummbnail) {
+        this.num = num;
+        this.name = name;
+        this.thummbnail = thummbnail;
     }
 
-    public Shop(int num, String name, int thummbnail) {
-        this.num=num;
-        this.name=name;
-        this.thummbnail=thummbnail;
-    }
-
-    public int getId() {
+    public String getId() {
         return num;
     }
 
-    public void setId(int num) {
-        this.num=num;
+    public void setId(String num) {
+        this.num = num;
     }
 
     public String getName() {
@@ -42,6 +36,6 @@ public class Shop {
     }
 
     public void setThummbnail(int thummbnail) {
-        this.thummbnail=thummbnail;
+        this.thummbnail = thummbnail;
     }
 }

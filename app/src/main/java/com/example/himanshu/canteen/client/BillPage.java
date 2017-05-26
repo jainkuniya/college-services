@@ -1,12 +1,10 @@
-package com.example.himanshu.canteen;
+package com.example.himanshu.canteen.client;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,18 +12,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.SparseArray;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.himanshu.canteen.Items;
+import com.example.himanshu.canteen.LoginActivity;
+import com.example.himanshu.canteen.MainActivity;
+import com.example.himanshu.canteen.PreviousOrders;
+import com.example.himanshu.canteen.R;
+import com.example.himanshu.canteen.Singleton;
+import com.example.himanshu.canteen.YourOrdersAdapter;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+
 
 /**
  * Created by himanshu on 2/2/17.
@@ -51,9 +59,10 @@ public class BillPage extends AppCompatActivity {
     private String clientName, clientRollno, clienInitials, orderID;
     private int navItemIndex, totalPrice = 0, shopID = 0;
     public static long count = 0, countOrder1 = 0, random;
-    private SparseArray<Items> sparseArray;
+    private HashMap<Long, Items> sparseArray;
     private Items order;
     private Map<String, Integer> users = new HashMap<String, Integer>();
+    private ArrayList<Items> array=new ArrayList<Items>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,8 +71,11 @@ public class BillPage extends AppCompatActivity {
 
         FirebaseApp.initializeApp(this);
         sparseArray = Singleton.getInstance().getItemsSparseArray();
+        array.addAll(sparseArray.values());
+
         orders = (RecyclerView) findViewById(R.id.orders);
-        yourOrdersAdapter = new YourOrdersAdapter(sparseArray);
+        yourOrdersAdapter = new YourOrdersAdapter(array);
+
 
         RecyclerView.LayoutManager orderLayoutManager = new LinearLayoutManager(getApplicationContext());
         orders.setLayoutManager(orderLayoutManager);
@@ -92,13 +104,23 @@ public class BillPage extends AppCompatActivity {
 
         orderItemName = new String[sparseArray.size()];
         orderTotal = new int[sparseArray.size()];
-        for (int i = 0; i < sparseArray.size(); i++) {
+
+        Iterator it = sparseArray.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+           // System.out.println(pair.getKey() + " = " + pair.getValue());
+           order= sparseArray.get(pair.getKey());
+            users.put(order.getItemName(), order.getItemPrice() * order.getItemQty());
+            totalPrice = totalPrice + (order.getItemPrice() * order.getItemQty());
+            it.remove(); // avoids a ConcurrentModificationException
+        }
+        /*for (int i = 0; i < sparseArray.size(); i++) {
             int key = sparseArray.keyAt(i);
             order = sparseArray.get(key);
             users.put(order.getItemName(), order.getItemPrice() * order.getItemQty());
             totalPrice = totalPrice + (order.getItemPrice() * order.getItemQty());
         }
-
+        */
         if (savedInstanceState == null) {
             navItemIndex = 0;
             CURRENT_TAG = TAG_HOME;
@@ -126,6 +148,8 @@ public class BillPage extends AppCompatActivity {
                 orderChild.getParent().child("Merchant/" + (100 + shopID) + "/OrderID").child("OrderID" + random).setValue(random);
 
                 sparseArray.clear();
+                startActivity(new Intent(BillPage.this,MainActivity.class ));
+                finish();
             }
         });
     }
@@ -159,7 +183,8 @@ public class BillPage extends AppCompatActivity {
         drawer.closeDrawers();
 
         // refresh toolbar menu
-        invalidateOptionsMenu();
+
+        //invalidateOptionsMenu();
     }
 
     private void setToolbarTitle() {
@@ -217,5 +242,6 @@ public class BillPage extends AppCompatActivity {
                 return true;
             }
         });
+
     }
 }

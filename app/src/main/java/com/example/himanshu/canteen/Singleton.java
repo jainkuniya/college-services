@@ -1,8 +1,5 @@
 package com.example.himanshu.canteen;
 
-import android.util.SparseArray;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -11,19 +8,18 @@ import java.util.HashMap;
 
 public class Singleton {
     private static Singleton singleton;
-    private static SparseArray<Items> itemsSparseArray;
+    private static HashMap<Long,Items> itemsSparseArray;
 
     public static Singleton getInstance() {
         if (singleton == null) {
-            itemsSparseArray = new SparseArray<>();
+            itemsSparseArray = new HashMap<>();
             singleton = new Singleton();
             return singleton;
         } else {
             return singleton;
         }
     }
-
-    public SparseArray<Items> getItemsSparseArray() {
+    public HashMap<Long,Items> getItemsSparseArray() {
         return itemsSparseArray;
     }
 }
