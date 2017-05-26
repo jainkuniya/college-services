@@ -7,7 +7,7 @@ package com.example.himanshu.canteen;
 public class OrderToMerchant {
     private String id, name, items, totalPrice;
     private boolean isVerified, isDelivered;
-    private boolean verified;
+    private boolean verified,delivered;
 
     public OrderToMerchant(String id, String name, String items, String totalPrice, boolean isVerified, boolean isDelivered) {
         this.id = id;
@@ -40,6 +40,11 @@ public class OrderToMerchant {
 
     public String getTotalPrice() {
         return totalPrice;
+    }
+
+    public void setDelivered(boolean delivered){
+        this.delivered=delivered;
+
     }
 
     public void setVerified(boolean verified) {

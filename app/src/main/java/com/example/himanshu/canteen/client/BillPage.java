@@ -148,7 +148,9 @@ public class BillPage extends AppCompatActivity {
                 orderChild.getParent().child("Merchant/" + (100 + shopID) + "/OrderID").child("OrderID" + random).setValue(random);
 
                 sparseArray.clear();
-                startActivity(new Intent(BillPage.this,MainActivity.class ));   }
+                startActivity(new Intent(BillPage.this,MainActivity.class ));
+                finish();
+            }
         });
     }
 

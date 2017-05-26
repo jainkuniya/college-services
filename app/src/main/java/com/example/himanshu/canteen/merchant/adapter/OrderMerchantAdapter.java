@@ -61,7 +61,8 @@ public abstract class OrderMerchantAdapter extends RecyclerView.Adapter<OrderMer
         if (!order.isVerified()) {
             holder.done.setVisibility(View.GONE);
             holder.cbVerify.setVisibility(View.VISIBLE);
-        } else {
+        }
+        else{
             holder.cbVerify.setVisibility(View.GONE);
             holder.done.setVisibility(View.VISIBLE);
         }
@@ -70,20 +71,28 @@ public abstract class OrderMerchantAdapter extends RecyclerView.Adapter<OrderMer
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 updateOrder(order.getId(), "1", "0");
-                if (isChecked) {
+                if (isChecked)
+                {
+                    order.setVerified(true);
                     holder.cbVerify.setVisibility(View.GONE);
                     holder.done.setVisibility(View.VISIBLE);
                 }
+
             }
         });
 
         holder.done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateOrder(order.getId(), "1", "1");
-                orderList.remove(position);
 
-               notifyDataSetChanged();
+
+                order.setDelivered(true);
+                orderList.remove(order);
+
+
+             OrderMerchantAdapter.this.notifyDataSetChanged();
+                updateOrder(order.getId(), "1", "1");
+
             }
         });
     }
